@@ -8,10 +8,13 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/reverb": "@beta",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "livewire/livewire": "^3.4",
+        "openai-php/client": "^0.8.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "hotwired-laravel/turbo-breeze": "1.0.0-beta17",
         "laravel/breeze": "^2.0",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",

@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\User;
+use App\Events\CreateUser;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +20,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/create-user', function () {
+    // CreateUser::dispatch(User::first());
+
+    $user = User::first();
+
+    $user->notify(new \App\Notifications\UserCreatedNotification());
+
+});
+
+Route::resource('chirps', ChirpController::class)
+    ->only(['index', 'create', 'store'])
+    ->middleware(['auth', 'verified']);
+
+require __DIR__ . '/auth.php';

@@ -1,7 +1,11 @@
-import './bootstrap';
+import "./bootstrap";
 
-import Alpine from 'alpinejs';
+// import Alpine from "alpinejs";
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine.start();
+
+window.Echo.private("App.Models.User.1").notification((notification) => {
+    console.log(notification);
+});

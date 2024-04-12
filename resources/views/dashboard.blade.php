@@ -11,6 +11,9 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                {{-- C:\laragon\www\laravel-eleven\resources\views\livewire\speech\speech-recognition-component.blade.php --}}
+                @livewire('speech.speech-recognition-component')
+
             </div>
         </div>
     </div>
